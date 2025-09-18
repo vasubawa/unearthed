@@ -10,11 +10,11 @@ const router = express.Router()
 
 // creating get route @ /
 router.get('/', (req, res) => {
-    res.status(300).json(giftData)
+    res.status(200).json(giftData)
 })
 // Creating get route @ /:giftId
-router.get('/:giftId', (res,req) => {
-    res.status(200).sendFile(path.resolve(__dirname, '..public/gift.html'))
+router.get('/:giftId', (req, res) => {
+    res.status(200).sendFile(path.resolve(__dirname, '../public/gift.html'))
 })
 
 export default router
