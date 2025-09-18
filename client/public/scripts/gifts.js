@@ -52,5 +52,10 @@ const renderGifts = async () => {
 	}
 }
 
-// Call the renderGifts function to display gifts on page load
-renderGifts();
+// Only call renderGifts on the home page, otherwise redirect to 404
+const requestedUrl = window.location.pathname.replace(/^\//, '');
+if (requestedUrl && requestedUrl !== '') {
+	window.location.href = '../404.html';
+} else {
+	renderGifts();
+}
