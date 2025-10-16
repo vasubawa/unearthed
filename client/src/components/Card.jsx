@@ -4,10 +4,10 @@ import './Card.css'
 
 const Card = (props) => { 
     
-    const [gift, setGift] = useState({id: 0, name: "", pricePoint: "", audience: "", image: ""})
+    const [gift, setGift] = useState({id: 0, name: "", pricepoint: "", audience: "", image: ""})
 
     useEffect(() => {
-        setGift({id: props.id, name: props.name, pricePoint: props.pricePoint, audience: props.audience, image: props.image});
+        setGift({id: props.id, name: props.name, pricepoint: props.pricepoint, audience: props.audience, image: props.image});
     }, [props]);
 
     return (
@@ -15,9 +15,9 @@ const Card = (props) => {
             <div className='top-container' style={{ backgroundImage:`url(${gift.image})`}}></div>
             <div className='bottom-container'>
                 <h3>{gift.name}</h3>
-                <p>{'Price: ' + gift.pricePoint}</p>
+                <p>{'Price: ' + gift.pricepoint}</p>
                 <p>{'Great For: ' + gift.audience}</p>
-                <Link to={'/gift/' + gift.id} className="read-more-link">Read More →</Link>
+                <Link to={'/gift/' + gift.id}><a>Read More →</a></Link>
             </div>
         </div>
     )

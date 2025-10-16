@@ -13,16 +13,19 @@ const App = () => {
 
 
   useEffect(() => {
+
     const fetchGifts = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/gifts');
-        const data = await response.json();
-        setGifts(data);
-      } catch (err) {
-        console.error('Error fetching gifts:', err);
-      }
-    };
+
+      const url = 'http://localhost:3000/gifts/'
+      const response = await fetch(url);
+      const json = await response.json();
+
+      setGifts(json);
+      return json;
+    }
+
     fetchGifts();
+
   }, []);
 
 

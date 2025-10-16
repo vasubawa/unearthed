@@ -3,10 +3,10 @@ import GiftsController from '../controllers/gifts.js'
 
 const router = express.Router()
 
-// Get all gifts
+// GET /gifts/
 router.get('/', GiftsController.getGifts)
-
-// Get gift by ID
 router.get('/:giftId', GiftsController.getGiftById)
-
+router.post('/', GiftsController.createGift)
+router.delete('/:id', GiftsController.deleteGift)
+router.patch('/:id', GiftsController.updateGift)
 export default router

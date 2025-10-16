@@ -14,19 +14,18 @@ const Gifts = (props) => {
     return (
         <div className="Gifts">
             <main>
-                        {
-                                gifts && gifts.length > 0 ?
-                                gifts.map((gift) => 
-                                     <Card
-                                         key={gift.id}
-                                         id={gift.id}
-                                         image={gift.image}
-                                         name={gift.name}
-                                         pricePoint={gift.pricePoint}
-                                         audience={gift.audience}
-                                     />
-                                ) : <h3 className="noResults">{'No Gifts Yet 😞'}</h3>
-                        }
+            {
+                gifts && gifts.length > 0 ?
+                gifts.map((gift,index) => 
+                    
+                   <Card id={gift.id} 
+                         image={gift.image} 
+                         name={gift.name} 
+                         pricepoint={gift.pricepoint} 
+                         audience={gift.audience} />
+
+                ) : <h3 className="noResults">{'No Gifts Yet 😞'}</h3>
+            }
             </main>
         </div>  
     )
